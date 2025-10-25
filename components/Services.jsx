@@ -1,22 +1,68 @@
-import { Wrench, ShoppingBag, ShieldCheck } from 'lucide-react'
+'use client'
 
-const services = [
-    { icon: Wrench, title: 'المقاولات', desc: 'تنفيذ مشاريع البناء بأعلى المعايير الهندسية.' },
-    { icon: ShoppingBag, title: 'التجارة', desc: 'توريد المواد والمعدات الهندسية المعتمدة.' },
-    { icon: ShieldCheck, title: 'الأمن والسلامة', desc: 'تركيب أنظمة المراقبة والحماية المتقدمة.' },
-]
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 export default function Services() {
+    const { t } = useTranslation('translation')
+
+    const services = [
+        { titleKey: 'fireSystems', descKey: 'fireSystemsDesc', image: '/images/isawred-unsplash.jpg' },
+        { titleKey: 'earlyAlarm', descKey: 'earlyAlarmDesc', image: '/images/unk.jpg' },
+        { titleKey: 'fireEquip', descKey: 'fireEquipDesc', image: '/images/Fireexting.jpg' },
+        { titleKey: 'fireMaterials', descKey: 'fireMaterialsDesc', image: '/images/yavuz-kosar.jpg' },
+        { titleKey: 'safetyTools', descKey: 'safetyToolsDesc', image: '/images/safety.png' },
+        { titleKey: 'maintenance', descKey: 'maintenanceDesc', image: '/images/PeriodicMaintenance.jpg' },
+    ]
+
     return (
-        <section className="py-20 bg-white text-center">
-            <h2 className="text-3xl font-bold mb-10 text-blue-900">خدماتنا</h2>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-                {services.map(({ icon: Icon, title, desc }) => (
-                    <div key={title} className="bg-gray-100 shadow-lg rounded-xl p-8 hover:shadow-xl transition">
-                        <Icon size={48} className="mx-auto text-blue-500 mb-4" />
-                        <h3 className="font-bold text-xl mb-3">{title}</h3>
-                        <p className="text-gray-700">{desc}</p>
-                    </div>
+        <section
+            id="services"
+            className="py-20 px-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500"
+        >
+            <div className="max-w-7xl mx-auto text-center mb-16">
+                <motion.h2
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-4xl md:text-5xl font-bold text-[#0068B4] dark:text-white"
+                >
+                    {t('servicesTitle', 'خدماتنا')}
+                </motion.h2>
+                <div className="w-24 h-1 bg-[#0068B4] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8">
+                {services.map((service, i) => (
+                    <motion.div
+                        key={service.titleKey}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: i * 0.1 }}
+                        className="relative w-full md:w-[30%] rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-transform duration-300 bg-transparent border border-gray-200 dark:border-gray-700"
+                    >
+                        {/* صورة الخدمة */}
+                        <div className="relative h-48 w-full">
+                            <Image
+                                src={service.image}
+                                alt={t(service.titleKey)}
+                                fill
+                                style={{ objectFit: 'cover' }}
+                                className="group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-30 transition-opacity"></div>
+                        </div>
+
+                        {/* محتوى الكارد */}
+                        <div className="p-6 text-center">
+                            <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{t(service.titleKey)}</h3>
+                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                                {t(service.descKey)}
+                            </p>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

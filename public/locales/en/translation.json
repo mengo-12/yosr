@@ -25,5 +25,22 @@
   "aboutmissionDec":"We believe that our continued success depends heavily on the effective contribution of our employees. This requires us to employ people with high qualifications and competencies who will contribute to the growth of the company. It is also necessary to keep them motivated to work and provide training and development programs.",
 
   "aboutgoalsTitle":"Our goals",
-  "aboutgoalsDesc":"To continue to develop and improve our services and to provide the best environmental control solutions and systems of high efficiency and we are committed to search for the most environmentally friendly compo-nents and use in all our products and follow the best specifications and standards in the processes of supply and installation that do not cause damage to our environment."
+  "aboutgoalsDesc":"To continue to develop and improve our services and to provide the best environmental control solutions and systems of high efficiency and we are committed to search for the most environmentally friendly compo-nents and use in all our products and follow the best specifications and standards in the processes of supply and installation that do not cause damage to our environment.",
+
+  
+  "servicesTitle": "Our Services",
+  "fireSystems": "Fire Suppression Systems",
+  "fireSystemsDesc": "Installation and operation of modern fire suppression systems according to the highest standards.",
+  "earlyAlarm": "Early Fire Alarm Systems",
+  "earlyAlarmDesc": "Traditional and addressable early fire alarm systems with programming.",
+  "fireEquip": "Firefighting Equipment",
+  "fireEquipDesc": "Provision of all necessary firefighting equipment to ensure safety.",
+  "fireMaterials": "Fire-Resistant Materials",
+  "fireMaterialsDesc": "High-quality materials to prevent fire spread and protect facilities.",
+  "safetyTools": "Safety Tools",
+  "safetyToolsDesc": "Professional safety tools to ensure employee and customer protection.",
+  "maintenance": "Periodic Maintenance",
+  "maintenanceDesc": "Scheduled maintenance for all fire systems to ensure continuous operation."
+
+
 }
