@@ -40,7 +40,16 @@
   "safetyTools": "Safety Tools",
   "safetyToolsDesc": "Professional safety tools to ensure employee and customer protection.",
   "maintenance": "Periodic Maintenance",
-  "maintenanceDesc": "Scheduled maintenance for all fire systems to ensure continuous operation."
+  "maintenanceDesc": "Scheduled maintenance for all fire systems to ensure continuous operation.",
 
 
+  "achievementsTitle": "Our Achievements",
+  "projectsCompleted": "Projects Completed",
+  "projectsCompletedDesc": "Successfully completed over 150 projects since our establishment.",
+  "happyClients": "Happy Clients",
+  "happyClientsDesc": "Achieved satisfaction for more than 300 clients through our excellent services.",
+  "yearsExperience": "Years of Experience",
+  "yearsExperienceDesc": "Over 20 years of experience across contracting, trading, and safety fields.",
+  "awardsReceived": "Awards Received",
+  "awardsReceivedDesc": "Received several awards in innovation and quality excellence."
 }

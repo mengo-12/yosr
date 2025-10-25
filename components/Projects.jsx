@@ -1,29 +1,171 @@
+// 'use client'
+
+// import { motion } from 'framer-motion'
+// import Image from 'next/image'
+// import { useTranslation } from 'react-i18next'
+// import { Trophy, Users, Briefcase, Star } from 'lucide-react'
+
+// export default function Achievements() {
+//     const { t } = useTranslation('translation')
+
+//     const achievements = [
+//         {
+//             icon: <Trophy size={36} className="text-[#0068B4]" />,
+//             titleKey: 'projectsCompleted',
+//             descKey: 'projectsCompletedDesc'
+//         },
+//         {
+//             icon: <Users size={36} className="text-[#0068B4]" />,
+//             titleKey: 'happyClients',
+//             descKey: 'happyClientsDesc'
+//         },
+//         {
+//             icon: <Briefcase size={36} className="text-[#0068B4]" />,
+//             titleKey: 'yearsExperience',
+//             descKey: 'yearsExperienceDesc'
+//         },
+//         {
+//             icon: <Star size={36} className="text-[#0068B4]" />,
+//             titleKey: 'awardsReceived',
+//             descKey: 'awardsReceivedDesc'
+//         },
+//     ]
+
+//     return (
+//         <section
+//             id="achievements"
+//             className="py-20 px-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500"
+//         >
+//             {/* عنوان القسم */}
+//             <div className="max-w-7xl mx-auto text-center mb-16">
+//                 <motion.h2
+//                     initial={{ opacity: 0, y: 40 }}
+//                     whileInView={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.8 }}
+//                     viewport={{ once: true }}
+//                     className="text-4xl md:text-5xl font-bold text-[#0068B4] dark:text-white"
+//                 >
+//                     {t('achievementsTitle', 'إنجازاتنا')}
+//                 </motion.h2>
+//                 <div className="w-24 h-1 bg-[#0068B4] mx-auto rounded-full mt-4"></div>
+//             </div>
+
+//             {/* بطاقات الإنجازات */}
+//             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+//                 {achievements.map((achieve, i) => (
+//                     <motion.div
+//                         key={achieve.titleKey}
+//                         initial={{ opacity: 0, y: 50 }}
+//                         whileInView={{ opacity: 1, y: 0 }}
+//                         transition={{ duration: 0.8, delay: i * 0.2 }}
+//                         className="flex flex-col items-center text-center p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+//                     >
+//                         <div className="mb-4">{achieve.icon}</div>
+//                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+//                             {t(achieve.titleKey)}
+//                         </h3>
+//                         <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+//                             {t(achieve.descKey)}
+//                         </p>
+//                     </motion.div>
+//                 ))}
+//             </div>
+//         </section>
+//     )
+// }
+
+// الاعلى تصميم 1
+
+
 'use client'
-import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
 
-const projects = [
-    { title: 'مبنى إداري', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7' },
-    { title: 'مستودع تجاري', image: 'https://images.unsplash.com/photo-1581092334703-fc8a6e08fdf1' },
-    { title: 'نظام مراقبة ذكي', image: 'https://images.unsplash.com/photo-1581091870622-72e8d9f6e8f3' },
-]
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { Trophy, Users, Briefcase, Star } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
-export default function Projects() {
-    const [sliderRef] = useKeenSlider({ loop: true, slides: { perView: 1, spacing: 15 } })
+export default function Achievements() {
+    const { t } = useTranslation('translation')
+
+    const achievements = [
+        {
+            icon: <Trophy size={50} className="text-[#0068B4]" />,
+            titleKey: 'projectsCompleted',
+            count: 150
+        },
+        {
+            icon: <Users size={50} className="text-[#0068B4]" />,
+            titleKey: 'happyClients',
+            count: 300
+        },
+        {
+            icon: <Briefcase size={50} className="text-[#0068B4]" />,
+            titleKey: 'yearsExperience',
+            count: 20
+        },
+        {
+            icon: <Star size={50} className="text-[#0068B4]" />,
+            titleKey: 'awardsReceived',
+            count: 12
+        },
+    ]
+
+    const [counters, setCounters] = useState(achievements.map(() => 0))
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounters(prev => prev.map((val, i) => {
+                if (val < achievements[i].count) return val + Math.ceil(achievements[i].count / 100)
+                return achievements[i].count
+            }))
+        }, 30)
+        return () => clearInterval(interval)
+    }, [])
 
     return (
-        <section className="py-20 bg-gray-50 text-center">
-            <h2 className="text-3xl font-bold mb-10 text-blue-900">مشاريعنا</h2>
-            <div ref={sliderRef} className="keen-slider max-w-3xl mx-auto">
-                {projects.map((p, i) => (
-                    <div key={i} className="keen-slider__slide">
-                        <div className="rounded-xl overflow-hidden shadow-lg bg-white">
-                            <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
-                            <h3 className="text-xl font-semibold py-4 text-blue-800">{p.title}</h3>
-                        </div>
-                    </div>
+        <section
+            id="achievements"
+            className="py-20 px-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500"
+        >
+            {/* عنوان القسم */}
+            <div className="max-w-7xl mx-auto text-center mb-16">
+                <motion.h2
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-4xl md:text-5xl font-bold text-[#0068B4] dark:text-white"
+                >
+                    {t('achievementsTitle', 'إنجازاتنا')}
+                </motion.h2>
+                <div className="w-24 h-1 bg-[#0068B4] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            {/* عرض الإنجازات كعدادات */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                {achievements.map((achieve, i) => (
+                    <motion.div
+                        key={achieve.titleKey}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: i * 0.2 }}
+                        className="flex flex-col items-center justify-center gap-4 p-6"
+                    >
+                        <div className="mb-2">{achieve.icon}</div>
+                        <span className="text-4xl md:text-5xl font-extrabold text-[#0068B4]">
+                            {counters[i]}
+                            {achieve.titleKey === 'yearsExperience' ? '+' : ''}
+                        </span>
+                        <p className="text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-300">
+                            {t(achieve.titleKey)}
+                        </p>
+                    </motion.div>
                 ))}
             </div>
         </section>
     )
 }
+
+
+
+// الاعلى تصميم 2
