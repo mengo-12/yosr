@@ -4,5 +4,14 @@
   "aboutUs": "About Us",
   "services": "Services",
   "contact": "Contact",
-  "projects": "Projects"
+  "projects": "Projects",
+
+  "aboutUsTitle": "About Us",
+  "aboutUsDescription": "YOSR Company specializes in general contracting, trading, and safety systems. We focus on innovation, precision, and client satisfaction in every project.",
+  "aboutCard1Title": "Our Vision",
+  "aboutCard1Desc": "To be a leading company in contracting and safety systems through continuous innovation.",
+  "aboutCard2Title": "Our Values",
+  "aboutCard2Desc": "Integrity, quality, commitment, and excellence are the foundations of our client relationships.",
+  "aboutCard3Title": "Our Mission",
+  "aboutCard3Desc": "To provide integrated solutions that ensure customer satisfaction and the highest standards of safety and quality."
 }
