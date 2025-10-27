@@ -157,8 +157,17 @@ export default function About() {
                     transition={{ duration: 0.8 }}
                     className="w-full md:w-1/2 relative h-80 md:h-[400px] rounded-xl overflow-hidden shadow-lg"
                 >
-                    <Image
+                    {/* <Image
                         src="/images/company.jpg"
+                        alt="Company"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="rounded-xl"
+                        priority
+                    /> */}
+
+                    <Image
+                        src="/images/soura-4.png"
                         alt="Company"
                         fill
                         style={{ objectFit: 'cover' }}

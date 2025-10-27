@@ -72,7 +72,21 @@
   "addressLine3": "P.O. Box 5070, Postal Code 21955",
   "telefax": "Telefax: +966125700800",
   "unified": "Unified Number: 920004000",
-  "mapTitle": "YOSR Company Location - Makkah"
+  "mapTitle": "YOSR Company Location - Makkah",
 
+
+      "aboutTitle": "About Us",
+    "aboutDesc": "At YOSR, we strive to deliver innovative and effective solutions in technology and consulting to enhance customer experiences and support business growth.",
+    "quickLinks": "Quick Links",
+    "linkAbout": "About Us",
+    "linkServices": "Our Services",
+    "linkProjects": "Projects",
+    "linkContact": "Contact Us",
+    "contactUs": "Contact Us",
+    "phonefooter": "Phone",
+    "emailfooter": "Email",
+    "address": "Riyadh, Saudi Arabia",
+    "followUs": "Follow Us",
+    "rights": "© {{year}} YOSR Company. All rights reserved."
 
 }
