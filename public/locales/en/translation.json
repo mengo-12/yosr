@@ -54,5 +54,25 @@
   "awardsReceivedDesc": "Received several awards in innovation and quality excellence.",
 
 
-  "testimonialsTitle": "Testimonials"
+  "testimonialsTitle": "Testimonials",
+
+
+
+
+
+  "titlecontact": "Contact Us",
+  "subtitlecontact": "We are happy to hear from you anytime — our team is always ready to assist and answer your inquiries.",
+  "name": "Full Name",
+  "email": "Email Address",
+  "phone": "Phone Number",
+  "message": "Write your message here...",
+  "send": "Send Message",
+  "addressLine1": "Makkah, Saudi Arabia",
+  "addressLine2": "Al Shisha - King Fahd Road",
+  "addressLine3": "P.O. Box 5070, Postal Code 21955",
+  "telefax": "Telefax: +966125700800",
+  "unified": "Unified Number: 920004000",
+  "mapTitle": "YOSR Company Location - Makkah"
+
+
 }
