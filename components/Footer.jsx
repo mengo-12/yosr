@@ -39,7 +39,7 @@ export default function Footer() {
                 <div>
                     <h3 className="text-2xl font-semibold mb-4">{t('contactUs')}</h3>
                     <ul className="text-sm space-y-2 opacity-90">
-                        <li>{t('phone')}: +966 500000000</li>
+                        <li>{t('phone')}: 920004000</li>
                         <li>{t('email')}: info@yosr.sa</li>
                         <li>{t('address')}</li>
                     </ul>
@@ -51,9 +51,6 @@ export default function Footer() {
                         </a>
                         <a href="https://instagram.com" target="_blank" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
                             <Instagram size={18} />
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
-                            <Linkedin size={18} />
                         </a>
                         <a href="https://wa.me/966500000000" target="_blank" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
                             <Phone size={18} />

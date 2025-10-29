@@ -1,6 +1,7 @@
 'use client'
 import './globals.css'
 import Navbar from '../components/Navbar'
+import FloatingContact from '../components/FloatingContact'
 import { SettingsProvider } from '../context/SettingsContext'
 import '../lib/i18n'
 
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
                 <SettingsProvider>
                     <Navbar />
                     {children}
+                    <FloatingContact/>
                 </SettingsProvider>
             </body>
         </html>
