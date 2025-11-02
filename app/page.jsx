@@ -10,13 +10,13 @@ import PartnersSection from '../components/Partnar'
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <PartnersSection />
-      <Testimonials />
-      <ContactSection/>
+      <section id="hero"><Hero /></section>
+      <section id="aboutUs"><About /></section>
+      <section id="services"><Services /></section>
+      <section id="projects"><Projects /></section>
+      <section id="partners"><PartnersSection /></section>
+      <section id="testimonials"><Testimonials /></section>
+      <section id="contact"><ContactSection /></section>
       <Footer />
     </main>
   )

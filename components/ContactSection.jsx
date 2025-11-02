@@ -161,6 +161,37 @@ import { useTranslation } from 'react-i18next'
 export default function ContactSection() {
     const { t } = useTranslation()
 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            phone: e.target.phone.value,
+            message: e.target.message.value,
+        }
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            })
+
+            const data = await res.json()
+            if (data.success) {
+                alert("تم إرسال رسالتك بنجاح!")
+                e.target.reset()
+            } else {
+                alert(data.error || "حدث خطأ")
+            }
+        } catch (err) {
+            alert("حدث خطأ: " + err.message)
+        }
+    }
+
+
     return (
         <section
             id="contact"
@@ -191,6 +222,7 @@ export default function ContactSection() {
             <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 {/* نموذج التواصل */}
                 <motion.form
+                    onSubmit={handleSubmit}
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
@@ -210,6 +242,7 @@ export default function ContactSection() {
                         </label>
                         <input
                             type="text"
+                            name="name"
                             placeholder={t('name')}
                             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                         />
@@ -223,6 +256,7 @@ export default function ContactSection() {
                         </label>
                         <input
                             type="email"
+                            name="email"
                             placeholder={t('email')}
                             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                         />
@@ -236,6 +270,7 @@ export default function ContactSection() {
                         </label>
                         <input
                             type="tel"
+                            name="phone"
                             placeholder={t('phone')}
                             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                         />
@@ -248,6 +283,7 @@ export default function ContactSection() {
                             {t('message')}
                         </label>
                         <textarea
+                            name="message"
                             placeholder={t('message')}
                             rows={5}
                             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"

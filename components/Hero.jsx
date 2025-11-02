@@ -10,9 +10,9 @@ export default function Hero() {
     const { t, i18n } = useTranslation('translation')
 
     const slides = [
-        '/images/cccc.png',
-        '/images/dd.jpg',
-        '/images/dddd.png'
+        '/images/1.png',
+        '/images/2.png',
+        '/images/3.png'
     ]
 
     // 🔹 مرجع لضمان إعادة تشغيل KeenSlider عند تغيير اللغة
