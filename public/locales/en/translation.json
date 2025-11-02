@@ -5,6 +5,8 @@
   "services": "Services",
   "contact": "Contact",
   "projects": "Projects",
+  "login": "Login",
+  "logout": "Logout",
 
   "aboutUsTitle": "About Us",
   "aboutUsDescription": "Yosr CO. was stablished in 2009 ,it is a 100% Saudi company with a highly experienced workforce.We are a capable  , technically qualified, looked forward looking and fully committed to customer satisfaction.The company-ny is divided into four main sectors:trade – industry – General Contracting – Security & Safety Systems, and we offer four these sectors expertise and mastery.",
@@ -53,6 +55,8 @@
   "awardsReceived": "Awards Received",
   "awardsReceivedDesc": "Received several awards in innovation and quality excellence.",
 
+
+  "partnersTitle": "partners",
 
   "testimonialsTitle": "Testimonials",
 

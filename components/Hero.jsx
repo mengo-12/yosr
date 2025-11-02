@@ -11,8 +11,8 @@ export default function Hero() {
 
     const slides = [
         '/images/1.png',
-        '/images/2.png',
-        '/images/3.png'
+        '/images/12.png',
+        '/images/8.png'
     ]
 
     // 🔹 مرجع لضمان إعادة تشغيل KeenSlider عند تغيير اللغة
@@ -70,12 +70,12 @@ export default function Hero() {
 
                     {/* النصوص فوق الصورة */}
                     <div className="absolute inset-0 z-10 bg-black/40 flex flex-col items-center justify-center px-4 text-center">
-                        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                        {/* <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                             {t('title')}
                         </h1>
                         <p className="text-lg md:text-2xl text-white max-w-2xl drop-shadow-md">
                             {t('subtitle')}
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             ))}

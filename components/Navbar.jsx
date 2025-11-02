@@ -262,14 +262,20 @@ export default function Navbar() {
                     {/* زر الإدمن */}
                     {isAdmin ? (
                         <li>
-                            <button onClick={handleLogout} className={`hover:text-white transition-colors duration-300 ${scrolled ? 'text-white' : 'text-[#0068B4]'}`}>
-                                تسجيل الخروج
+                            <button
+                                onClick={handleLogout}
+                                className={`hover:text-white transition-colors duration-300 ${scrolled ? 'text-white' : 'text-[#0068B4]'}`}
+                            >
+                                {t('logout')} {/* استخدام المفتاح logout */}
                             </button>
                         </li>
                     ) : (
                         <li>
-                            <a href="/admin/login" className={`hover:text-white transition-colors duration-300 ${scrolled ? 'text-white' : 'text-[#0068B4]'}`}>
-                                تسجيل الدخول
+                            <a
+                                href="/admin/login"
+                                className={`hover:text-white transition-colors duration-300 ${scrolled ? 'text-white' : 'text-[#0068B4]'}`}
+                            >
+                                {t('login')} {/* استخدام المفتاح login */}
                             </a>
                         </li>
                     )}
